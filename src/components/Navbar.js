@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+<<<<<<< HEAD
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -22,6 +23,16 @@ const pages = ["Home", "Teams", "Events", "Members"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar(props) {
+=======
+import AdbIcon from "@mui/icons-material/Adb";
+
+import { Link } from "react-router-dom";
+
+const pages = ["Teams", "Events", "Plan"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+function ResponsiveAppBar() {
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -40,6 +51,7 @@ function ResponsiveAppBar(props) {
     setAnchorElUser(null);
   };
 
+<<<<<<< HEAD
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -100,10 +112,13 @@ function ResponsiveAppBar(props) {
     }
   };
 
+=======
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+<<<<<<< HEAD
           <Link className="text-decoration-none text-white" to="home">
             <Typography
               variant="h6"
@@ -123,6 +138,26 @@ function ResponsiveAppBar(props) {
               ZAKOVAT
             </Typography>
           </Link>
+=======
+          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            LOGO
+          </Typography>
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -166,6 +201,10 @@ function ResponsiveAppBar(props) {
               ))}
             </Menu>
           </Box>
+<<<<<<< HEAD
+=======
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
           <Typography
             variant="h5"
             noWrap
@@ -177,17 +216,27 @@ function ResponsiveAppBar(props) {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
+<<<<<<< HEAD
               letterSpacing: ".2rem",
               color: "gold",
               textDecoration: "none",
             }}
           >
             ZAKOVAT
+=======
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            LOGO
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link className="text-decoration-none" key={page} to={page}>
                 <Button
+<<<<<<< HEAD
                   className="fs-5 text-center"
                   key={page}
                   onClick={handleCloseNavMenu}
@@ -197,12 +246,18 @@ function ResponsiveAppBar(props) {
                     display: "flex",
                     textAlign: "center",
                   }}
+=======
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
                 >
                   {page}
                 </Button>
               </Link>
             ))}
           </Box>
+<<<<<<< HEAD
           <FormGroup>
             <FormControlLabel
               control={
@@ -215,13 +270,19 @@ function ResponsiveAppBar(props) {
               }
             />
           </FormGroup>
+=======
+
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
