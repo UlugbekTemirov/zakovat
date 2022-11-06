@@ -30,19 +30,11 @@ export default function BasicModal(props) {
     >
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-<<<<<<< HEAD
           {team.name}
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           {team.description}
           <Typography variant="h5" className="text-success mt-4 mb-0">
-=======
-          {team.team}
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          {team.description}
-          <Typography element={"h4"} className="text-success mt-4 mb-0">
->>>>>>> 094bca56227a21ecd4072bc38075a967060a3e65
             Team members
           </Typography>
           <List
