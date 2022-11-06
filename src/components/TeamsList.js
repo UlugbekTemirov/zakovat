@@ -31,7 +31,7 @@ const TeamsList = (props) => {
               {team.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {team.description.slice(0, 100)}...
+              {team.description.slice(0, 50)}...
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -1,28 +1,24 @@
 import * as React from "react";
-import TableComp from "../components/TableComp";
-import { DUMMY_DATA } from "../global/global";
-import { GROUP_DIVITION } from "../global/global";
-
-// console.log(GROUP_DIVITION[0].A.includes("zl1"));
-
-// console.log(
-//   GROUP_DIVITION.map((item) => DUMMY_DATA.map((id) => item.A.includes(id.id)))
-// ); // ["zl1", "zl2", "zl3", "zl4"]
-
-const groups = [
-  ["iwcb", "decwin", "aecvi", "afeorv"],
-  ["iwcb", "decwin", "aecvi", "afeorv"],
-  ["iwcb", "decwin", "aecvi", "afeorv"],
-  ["iwcb", "decwin", "aecvi", "afeorv"],
-];
+import RankingComp from "../components/RankingComp";
 
 const Events = () => {
+  const [groups, setGroups] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/v1/groups/")
+      .then((promise) => promise.json())
+      .then((data) => setGroups(data));
+  }, []);
+
   return (
-    <div className="row">
-      {groups.map((group) => (
-        <TableComp group={group} />
-      ))}
-    </div>
+    <>
+      <h1>Group Division</h1>
+      <div className="row">
+        {groups.map((group, id) => (
+          <RankingComp key={group.name} name={group.name} teams={group.teams} />
+        ))}
+      </div>
+    </>
   );
 };
 

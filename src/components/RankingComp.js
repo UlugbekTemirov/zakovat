@@ -31,18 +31,53 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 function createData(team, games, score) {
   return { team, games, score };
 }
+// const countFunc = () => {
+//   const groupLetters = ["A", "B", "C", "D"];
+//   const [count, setCount] = React.useState(0);
+//   setCount();
+//   return groupLetter[count];
+// };
 
-export default function TableComp({ group }) {
+export default function RankingComp(props) {
+  const groups = Object.keys(props.teams);
+
+  // if (count <= 3) setCount(count + 1);
+
+  // React.useState(() => {
+  //   countFunc();
+  // }, [group]);
+
+  // console.log(group[`${groupLetters[count]}`]);
+  // const [group, setGroup] = React.useState([props.teams.keys()]);
+
+  // React.useEffect(() => {
+  //   setGroup((prev) => [...prev, props.teams.keys()]);
+  // }, [props]);
+
+  // console.log(group);
+  // const score = [props.teams[`${groups[0]}`][0], props.teams[`${groups[1]}`][0], props.teams[`${groups[1]}`][0]];
+  let games = [];
+  let scores = [];
+  for (let i = 0; i <= 3; i++) {
+    games.push(props.teams[`${groups[i]}`][0]);
+    scores.push(props.teams[`${groups[i]}`][1]);
+  }
+
   const rows = [
-    createData(group[0], 0, 0),
-    createData(group[1], 0, 0),
-    createData(group[2], 0, 0),
-    createData(group[3], 0, 0),
+    createData(groups[0], games[0], scores[0]),
+    createData(groups[1], games[1], scores[1]),
+    createData(groups[2], games[2], scores[2]),
+    createData(groups[3], games[3], scores[3]),
   ];
+  games = [];
+  scores = [];
   return (
-    <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-      <TableContainer sx={{ mt: 5, borderRadius: "20px" }} component={Paper}>
-        <h2 className="text-warning text-center mt-3">Group A</h2>
+    <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+      <TableContainer
+        sx={{ mt: 5, borderRadius: "20px", maxWidth: 350 }}
+        component={Paper}
+      >
+        <h2 className="text-warning text-center mt-3">Group {props.name}</h2>
         <Table sx={{}} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -53,7 +88,7 @@ export default function TableComp({ group }) {
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <StyledTableRow key={row.name}>
+              <StyledTableRow key={row.team}>
                 <StyledTableCell component="th" scope="row">
                   {row.team}
                 </StyledTableCell>

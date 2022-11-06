@@ -13,8 +13,8 @@ const Members = () => {
   return (
     <ul>
       <h1>Members</h1>
-      {data.map((member) => (
-        <MembersList member={member} />
+      {data.map((member, id) => (
+        <MembersList key={id} member={member} />
       ))}
     </ul>
   );

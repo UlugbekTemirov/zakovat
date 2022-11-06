@@ -7,9 +7,11 @@ import BasicModal from "../components/BasicModal";
 const Teams = () => {
   const [data, setData] = React.useState([]);
 
-  fetch("http://127.0.0.1:8000/api/v1/teams/")
-    .then((promise) => promise.json())
-    .then((data) => setData(data));
+  React.useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/v1/teams/")
+      .then((promise) => promise.json())
+      .then((data) => setData(data));
+  }, []);
 
   const [selectedTeam, setSelectedTeam] = React.useState("");
 

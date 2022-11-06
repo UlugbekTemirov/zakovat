@@ -7,9 +7,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+// import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
@@ -19,26 +18,26 @@ import Switch from "@mui/material/Switch";
 import { Link } from "react-router-dom";
 
 const pages = ["Home", "Teams", "Events", "Members"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+// const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -101,14 +100,14 @@ function ResponsiveAppBar(props) {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link className="text-decoration-none text-white" to="home">
+          <Link className="text-decoration-none" to="home">
             <Typography
               variant="h6"
               noWrap
-              component="a"
+              // component="h6"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -155,9 +154,11 @@ function ResponsiveAppBar(props) {
             >
               {pages.map((page) => (
                 <Link
-                  className="text-decoration-none text-white"
+                  className={`text-decoration-none ${
+                    isChecked ? "text-white" : "text-dark"
+                  }`}
                   key={page}
-                  to={page}
+                  to={page.toLowerCase()}
                 >
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
@@ -166,13 +167,13 @@ function ResponsiveAppBar(props) {
               ))}
             </Menu>
           </Box>
+
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            // component="h6"
             sx={{
-              mr: 2,
+              mr: 0,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
@@ -182,11 +183,17 @@ function ResponsiveAppBar(props) {
               textDecoration: "none",
             }}
           >
-            ZAKOVAT
+            <Link to="home" className="text-decoration-none text-success">
+              ZAKOVAT
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link className="text-decoration-none" key={page} to={page}>
+              <Link
+                className="text-decoration-none"
+                key={page}
+                to={page.toLowerCase()}
+              >
                 <Button
                   className="fs-5 text-center"
                   key={page}
@@ -205,17 +212,17 @@ function ResponsiveAppBar(props) {
           </Box>
           <FormGroup>
             <FormControlLabel
+              sx={{ m: 0 }}
               control={
                 <MaterialUISwitch
-                  sx={{ m: 1 }}
-                  // defaultChecked
+                  sx={{ m: 0 }}
                   checked={isChecked}
                   onClick={(e) => getSwitchState(e)}
                 />
               }
             />
           </FormGroup>
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -243,7 +250,7 @@ function ResponsiveAppBar(props) {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

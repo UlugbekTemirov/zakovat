@@ -17,15 +17,21 @@ import Members from "./pages/Members";
 
 function App() {
   const [themeMode, setThemeMode] = React.useState("dark");
-  console.log(themeMode);
+  // const [isLoading, setIsLoading] = React.useState(true);
+
+  // setTimeout(setIsLoading(false), 1000);
+
+  // if (isLoading) {
+  //   return <h1>Loading...</h1>;
+  // } else
   return (
     <DarkTheme themeMode={themeMode}>
       <RouterComp setThemeMode={setThemeMode}>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/events" element={<Events />} />
         <Route path="/members" element={<Members />} />
-        <Route path="*" element={<Navigate to="/home" replace={true} />} />
+        <Route path="*" element={<Navigate to="/" replace={true} />} />
       </RouterComp>
     </DarkTheme>
   );

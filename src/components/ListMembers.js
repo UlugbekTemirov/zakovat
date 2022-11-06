@@ -10,10 +10,7 @@ export default function ListMembers(props) {
   return (
     <ListItem key={member} alignItems="flex-start">
       <ListItemAvatar>
-        <Avatar
-          alt="Remy Sharp"
-          src="https://picsum.photos/200/300?grayscale"
-        />
+        <Avatar alt={member} src="https://picsum.photos/200/300?grayscale" />
       </ListItemAvatar>
       <ListItemText
         secondary={

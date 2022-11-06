@@ -32,24 +32,20 @@ export default function BasicModal(props) {
         <Typography id="modal-modal-title" variant="h6" component="h2">
           {team.name}
         </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+        <Typography id="modal-modal-deSscription" sx={{ mt: 2 }}>
           {team.description}
-          <Typography variant="h5" className="text-success mt-4 mb-0">
-            Team members
-          </Typography>
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            {props.open &&
-              team.members.map((member) => (
-                <ListMembers
-                  key={member}
-                  member={member}
-                  leader={team.leader}
-                />
-              ))}
-          </List>
         </Typography>
+        <Typography variant="h5" className="text-success mt-4 mb-0">
+          Team members
+        </Typography>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
+          {props.open &&
+            team.members.map((member) => (
+              <ListMembers key={member} member={member} leader={team.leader} />
+            ))}
+        </List>
       </Box>
     </Modal>
   );
