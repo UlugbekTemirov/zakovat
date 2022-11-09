@@ -136,6 +136,6 @@ const GROUP_DIVITION = [
   { D: ["zl5", "zl6", "zl7", "zl8"] },
 ];
 
-const domainName = "http://127.0.0.1:8000";
+const domainName = "http://13.230.181.18";
 
 export { DUMMY_DATA, GROUP_DIVITION, domainName };
