@@ -3,7 +3,6 @@ import * as React from "react";
 import TeamsList from "../components/TeamsList";
 import BasicModal from "../components/BasicModal";
 import { domainName } from "../global/global";
-// import { DUMMY_DATA } from "../global/global";
 
 const Teams = () => {
   const [data, setData] = React.useState([]);

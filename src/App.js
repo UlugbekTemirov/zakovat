@@ -20,18 +20,8 @@ import GamesList from "./components/GamesList";
 
 function App() {
   const [themeMode, setThemeMode] = React.useState("dark");
-  // const keyDownHandler = (e) => {
-  //   console.log(e.key);
-  // };
-  // const [isLoading, setIsLoading] = React.useState(true);
 
-  // setTimeout(setIsLoading(false), 1000);
-
-  // if (isLoading) {
-  //   return <h1>Loading...</h1>;
-  // } else
   return (
-    // <div tabIndex={0} onKeyPress={keyDownHandler}>
     <DarkTheme themeMode={themeMode}>
       <RouterComp setThemeMode={setThemeMode}>
         <Route path="/" element={<Home />} />
@@ -44,7 +34,6 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </RouterComp>
     </DarkTheme>
-    // </div>
   );
 }
 

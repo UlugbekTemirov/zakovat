@@ -13,8 +13,6 @@ const Events = (props) => {
       .then((data) => setGroups(data));
   }, []);
 
-  // console.log(groups);
-
   if (groups.length == 0)
     return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
 
