@@ -9,7 +9,6 @@ import Typography from "@mui/material/Typography";
 
 export default function MembersList(props) {
   const { member } = props;
-  console.log(member);
 
   return (
     <List

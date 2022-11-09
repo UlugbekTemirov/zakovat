@@ -9,7 +9,6 @@ const Members = () => {
   const onButtonClick = () => {
     setSearch(searchHandler.current.value);
   };
-  console.log(search);
 
   React.useEffect(() => {
     fetch(`${domainName}/api/v1/members/`)
