@@ -15,17 +15,20 @@ const Events = (props) => {
 
   // console.log(groups);
 
-  // if (groups.length == 0) return;
+  if (groups.length == 0)
+    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
 
   return (
     <>
-      <h1 className="text-center text-goldish mt-4 mb-0">Group Division</h1>
+      <h1 className="text-center text-goldish mt-4 mb-0">Saralash bosqichi</h1>
       <div className="row">
         {groups.map((group) => (
           <RankingComp key={group.name} name={group.name} teams={group.teams} />
         ))}
       </div>
-      <h1 className="text-center text-goldish mt-5 mb-4">Upcoming Game</h1>
+      <h1 className="text-center text-goldish mt-5 mb-4">
+        Rejalashtirilgan o'yinlar
+      </h1>
       <UpcomingGame />
     </>
   );

@@ -25,7 +25,11 @@ const DevelopersList = (props) => {
                   className="d-flex justify-content-center"
                   href={developer.instagram}
                 >
-                  <img className="w-50" src={instagram} alt="instagram" />
+                  <img
+                    className="w-100 mx-lg-4"
+                    src={instagram}
+                    alt="instagram"
+                  />
                 </a>
               </div>
               <div className="col-4 socials">
@@ -34,7 +38,11 @@ const DevelopersList = (props) => {
                   className="d-flex justify-content-center"
                   href={developer.telegram}
                 >
-                  <img className="w-50" src={telegram} alt="telegram" />
+                  <img
+                    className="w-100 mx-lg-4"
+                    src={telegram}
+                    alt="telegram"
+                  />
                 </a>
               </div>
               <div className="col-4 socials">
@@ -43,7 +51,7 @@ const DevelopersList = (props) => {
                   className="d-flex justify-content-center"
                   href={developer.github}
                 >
-                  <img className="w-50" src={github} alt="github" />
+                  <img className="w-100 mx-lg-4" src={github} alt="github" />
                 </a>
               </div>
             </div>

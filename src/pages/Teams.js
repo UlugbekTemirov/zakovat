@@ -25,8 +25,8 @@ const Teams = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  //  const [modalState, setModalState] = React.useState(false);
-  //  const openModalHandler = () => {};
+  if (data.length == 0)
+    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
 
   return (
     <>

@@ -18,6 +18,7 @@ export default function MembersList(props) {
         margin: "0 auto",
         maxWidth: 360,
         bgcolor: "background.paper",
+        fontFamily: "SpaceMono",
       }}
     >
       <ListItem alignItems="flex-start">
@@ -25,11 +26,12 @@ export default function MembersList(props) {
           <Avatar alt="User Image" src="" />
         </ListItemAvatar>
         <ListItemText
+          sx={{ fontFamily: "SpaceMono" }}
           primary={member.full_name}
           secondary={
             <React.Fragment>
               <Typography
-                sx={{ display: "inline" }}
+                sx={{ display: "inline", fontFamily: "SpaceMono" }}
                 component="span"
                 variant="body2"
                 color="text.primary"
@@ -43,15 +45,3 @@ export default function MembersList(props) {
     </List>
   );
 }
-
-// import React from "react";
-
-// const MembersList = ({ member }) => {
-//   return (
-//     <li key={member.full_name}>
-//       {member.full_name} ------------ {member.team[0]}
-//     </li>
-//   );
-// };
-
-// export default MembersList;

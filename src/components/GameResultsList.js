@@ -14,7 +14,6 @@ const GameResultsList = (props) => {
           <Card
             key={result.game}
             sx={{
-              // minWidth: 345,
               p: 0,
               mt: 2,
               boxShadow: "#000 0px 7px 29px 0px;",

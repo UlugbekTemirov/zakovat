@@ -80,16 +80,18 @@ export default function RankingComp(props) {
           }}
           component={Paper}
         >
-          <h2 className="text-warning text-center mt-3">Group {props.name}</h2>
+          <h2 className="text-warning text-center mt-3">{props.name} guruh</h2>
           <Table sx={{}} aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>Teams</StyledTableCell>
-                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                  Games
+                <StyledTableCell sx={{ fontFamily: "SpaceMono" }}>
+                  Jamoalar
                 </StyledTableCell>
                 <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                  Scores
+                  O'yin
+                </StyledTableCell>
+                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                  Natija
                 </StyledTableCell>
               </TableRow>
             </TableHead>

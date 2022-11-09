@@ -14,6 +14,8 @@ const GameResults = (props) => {
 
   if (data.length == 0) return;
 
+  console.log(targetData);
+
   if (targetData.length !== 0) {
     if (targetData.results.length == 0)
       return (
@@ -21,6 +23,12 @@ const GameResults = (props) => {
           O'yinlar Topilmadi
         </h3>
       );
+
+    return (
+      <h3 className="text-white text-opacity-75 text-center mt-5">
+        O'yinlar Topilmadi
+      </h3>
+    );
   }
 
   return (

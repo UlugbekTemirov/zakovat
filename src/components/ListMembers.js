@@ -14,11 +14,9 @@ export default function ListMembers(props) {
       </ListItemAvatar>
       <ListItemText>
         <Typography
-          // sx={{ display: "flex", alignItems: "center" }}
           sx={{ fontFamily: "SpaceMono" }}
           component="h6"
           variant="h6"
-          // color="text.primary"
         >
           {member}
         </Typography>
