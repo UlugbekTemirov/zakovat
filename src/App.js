@@ -16,6 +16,7 @@ import Events from "./pages/Events";
 import Members from "./pages/Members";
 import LiveShare from "./pages/LiveShare";
 import Developers from "./pages/Developers";
+import GamesList from "./components/GamesList";
 
 function App() {
   const [themeMode, setThemeMode] = React.useState("dark");
@@ -39,6 +40,7 @@ function App() {
         <Route path="/members" element={<Members />} />
         <Route path="/liveshare" element={<LiveShare />} />
         <Route path="/developers" element={<Developers />} />
+        <Route path="/teams/:teamSlug" element={<GamesList />} />
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </RouterComp>
     </DarkTheme>

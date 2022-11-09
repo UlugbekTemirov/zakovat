@@ -4,7 +4,7 @@ import UpcomingGame from "../components/UpcomingGame";
 
 import { domainName } from "../global/global";
 
-const Events = () => {
+const Events = (props) => {
   const [groups, setGroups] = React.useState([]);
 
   React.useEffect(() => {
@@ -13,7 +13,7 @@ const Events = () => {
       .then((data) => setGroups(data));
   }, []);
 
-  console.log(groups);
+  // console.log(groups);
 
   // if (groups.length == 0) return;
 

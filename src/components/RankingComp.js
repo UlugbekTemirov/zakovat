@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,95 +29,103 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(team, games, score) {
-  return { team, games, score };
+function createData(team, games, score, slug) {
+  return { team, games, score, slug };
 }
-// const countFunc = () => {
-//   const groupLetters = ["A", "B", "C", "D"];
-//   const [count, setCount] = React.useState(0);
-//   setCount();
-//   return groupLetter[count];
-// };
 
 export default function RankingComp(props) {
-  console.log(props.teams);
   const groups = Object.keys(props.teams);
-  console.log(groups);
-  // if (count <= 3) setCount(count + 1);
 
-  // React.useState(() => {
-  //   countFunc();
-  // }, [group]);
-
-  // console.log(group[`${groupLetters[count]}`]);
-  // const [group, setGroup] = React.useState([props.teams.keys()]);
-
-  // React.useEffect(() => {
-  //   setGroup((prev) => [...prev, props.teams.keys()]);
-  // }, [props]);
-
-  // console.log(group);
-  // const score = [props.teams[`${groups[0]}`][0], props.teams[`${groups[1]}`][0], props.teams[`${groups[1]}`][0]];
   let games = [];
   let scores = [];
+  let slugs = [];
   for (let i = 0; i <= 3; i++) {
     games.push(props.teams[`${groups[i]}`]["games"]);
     scores.push(props.teams[`${groups[i]}`]["score"]);
+    let a = groups[i].toLowerCase();
+    let b, slug;
+    if (a.includes(" ")) {
+      b = a.split(" ");
+      slug = `${b[0]}-${b[1]}`;
+    } else if (a.includes("'")) {
+      b = a.split("'");
+      let x = "";
+      for (let i = 0; i < b.length; i++) {
+        x += b[i];
+      }
+      slug = x;
+    } else {
+      slug = a;
+    }
+    slugs.push(slug);
   }
 
   const rows = [
-    createData(groups[0], games[0], scores[0]),
-    createData(groups[1], games[1], scores[1]),
-    createData(groups[2], games[2], scores[2]),
-    createData(groups[3], games[3], scores[3]),
+    createData(groups[0], games[0], scores[0], slugs[0]),
+    createData(groups[1], games[1], scores[1], slugs[1]),
+    createData(groups[2], games[2], scores[2], slugs[2]),
+    createData(groups[3], games[3], scores[3], slugs[3]),
   ];
   games = [];
   scores = [];
   return (
-    <div className="col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center">
-      <TableContainer
-        sx={{
-          mt: 5,
-          borderRadius: "20px",
-          maxWidth: 350,
-          fontFamily: "SpaceMono",
-        }}
-        component={Paper}
-      >
-        <h2 className="text-warning text-center mt-3">Group {props.name}</h2>
-        <Table sx={{}} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Teams</StyledTableCell>
-              <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                Games
-              </StyledTableCell>
-              <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                Scores
-              </StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.team}>
-                <StyledTableCell
-                  sx={{ fontFamily: "SpaceMono" }}
-                  component="th"
-                  scope="row"
-                >
-                  {row.team}
+    <>
+      <div className="col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center">
+        <TableContainer
+          sx={{
+            mt: 5,
+            borderRadius: "20px",
+            maxWidth: 350,
+            fontFamily: "SpaceMono",
+          }}
+          component={Paper}
+        >
+          <h2 className="text-warning text-center mt-3">Group {props.name}</h2>
+          <Table sx={{}} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Teams</StyledTableCell>
+                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                  Games
                 </StyledTableCell>
                 <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                  {row.games}
+                  Scores
                 </StyledTableCell>
-                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
-                  {row.score}
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <StyledTableRow key={row.team}>
+                  <StyledTableCell
+                    sx={{ fontFamily: "SpaceMono" }}
+                    component="th"
+                    scope="row"
+                  >
+                    <Link
+                      className="text-decoration-none"
+                      to={`/teams/${row.slug}`}
+                    >
+                      {row.team}
+                    </Link>
+                  </StyledTableCell>
+                  <StyledTableCell
+                    sx={{ fontFamily: "SpaceMono" }}
+                    align="right"
+                  >
+                    {row.games}
+                  </StyledTableCell>
+                  <StyledTableCell
+                    sx={{ fontFamily: "SpaceMono" }}
+                    align="right"
+                  >
+                    {row.score}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    </>
   );
 }

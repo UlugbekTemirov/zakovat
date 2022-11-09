@@ -12,8 +12,8 @@ const Members = () => {
   }, []);
 
   return (
-    <ul>
-      <h1>Members</h1>
+    <ul className="members-list p-0">
+      <h1 className="text-center text-goldish mt-lg-5 mt-3">Members</h1>
       {data.map((member, id) => (
         <MembersList key={id} member={member} />
       ))}
