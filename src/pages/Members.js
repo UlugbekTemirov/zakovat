@@ -1,11 +1,12 @@
 import * as React from "react";
 import MembersList from "../components/MembersList";
+import { domainName } from "../global/global";
 
 const Members = () => {
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/v1/members/")
+    fetch(`${domainName}/api/v1/members/`)
       .then((promise) => promise.json())
       .then((data) => setData(data));
   }, []);

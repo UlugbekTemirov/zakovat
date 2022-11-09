@@ -8,25 +8,21 @@ import Typography from "@mui/material/Typography";
 export default function ListMembers(props) {
   const { member } = props;
   return (
-    <ListItem key={member} alignItems="flex-start">
+    <ListItem key={member} alignItems="center">
       <ListItemAvatar>
-        <Avatar alt={member} src="https://picsum.photos/200/300?grayscale" />
+        <Avatar alt={member} src="" />
       </ListItemAvatar>
-      <ListItemText
-        secondary={
-          <React.Fragment>
-            <Typography
-              sx={{ display: "inline" }}
-              component="span"
-              variant="body2"
-              color="text.primary"
-            >
-              {member}
-            </Typography>
-            {" — I'll be in your neighborhood doing errands this…"}
-          </React.Fragment>
-        }
-      />
+      <ListItemText>
+        <Typography
+          // sx={{ display: "flex", alignItems: "center" }}
+          sx={{ fontFamily: "SpaceMono" }}
+          component="h6"
+          variant="h6"
+          // color="text.primary"
+        >
+          {member}
+        </Typography>
+      </ListItemText>
     </ListItem>
   );
 }

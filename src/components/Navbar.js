@@ -17,7 +17,7 @@ import Switch from "@mui/material/Switch";
 
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "Teams", "Events", "Members"];
+const pages = ["Home", "Teams", "Events", "Members", "LiveShare", "Developers"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar(props) {
@@ -109,9 +109,10 @@ function ResponsiveAppBar(props) {
               noWrap
               // component="h6"
               sx={{
+                fontFamily: "SpaceMono",
                 mr: 2,
                 display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
+                // fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".2rem",
                 color: "gold",
@@ -154,6 +155,7 @@ function ResponsiveAppBar(props) {
             >
               {pages.map((page) => (
                 <Link
+                  sx={{ fontFamily: "SpaceMono" }}
                   className={`text-decoration-none ${
                     isChecked ? "text-white" : "text-dark"
                   }`}
@@ -173,33 +175,45 @@ function ResponsiveAppBar(props) {
             noWrap
             // component="h6"
             sx={{
+              fontFamily: "SpaceMono",
               mr: 0,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              // fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".2rem",
               color: "gold",
               textDecoration: "none",
             }}
           >
-            <Link to="home" className="text-decoration-none text-success">
+            <Link
+              sx={{ fontFamily: "SpaceMono" }}
+              to="home"
+              className="text-decoration-none text-goldish"
+            >
               ZAKOVAT
             </Link>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              fontFamily: "SpaceMono",
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {pages.map((page) => (
               <Link
+                sx={{ fontFamily: "SpaceMono" }}
                 className="text-decoration-none"
                 key={page}
                 to={page.toLowerCase()}
               >
                 <Button
-                  className="fs-5 text-center"
+                  className="fs-5 text-center mx-xl-3"
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    m: 2,
+                    fontFamily: "SpaceMono",
                     color: "white",
                     display: "flex",
                     textAlign: "center",
@@ -212,7 +226,7 @@ function ResponsiveAppBar(props) {
           </Box>
           <FormGroup>
             <FormControlLabel
-              sx={{ m: 0 }}
+              sx={{ m: 0, fontFamily: "SpaceMono" }}
               control={
                 <MaterialUISwitch
                   sx={{ m: 0 }}

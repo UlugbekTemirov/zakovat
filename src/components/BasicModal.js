@@ -22,6 +22,7 @@ export default function BasicModal(props) {
   const { team } = props;
   return (
     <Modal
+      // sx={{ width: "700px" }}
       key={team.id}
       open={props.open}
       onClose={props.handleClose}
@@ -29,13 +30,25 @@ export default function BasicModal(props) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Typography
+          sx={{ fontFamily: "SpaceMono" }}
+          id="modal-modal-title"
+          variant="h6"
+          component="h2"
+        >
           {team.name}
         </Typography>
-        <Typography id="modal-modal-deSscription" sx={{ mt: 2 }}>
+        <Typography
+          sx={{ fontFamily: "SpaceMono", mt: 2 }}
+          id="modal-modal-deSscription"
+        >
           {team.description}
         </Typography>
-        <Typography variant="h5" className="text-success mt-4 mb-0">
+        <Typography
+          sx={{ fontFamily: "SpaceMono" }}
+          variant="h5"
+          className="text-success mt-4 mb-0"
+        >
           Team members
         </Typography>
         <List

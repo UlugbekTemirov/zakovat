@@ -1,0 +1,9 @@
+@font-face {
+    font-family: SpaceMono;
+    src: url(./fonts/SpaceMono-Regular.ttf);
+}
+
+body {
+    padding-bottom: 50px;
+    font-family: SpaceMono !important;
+}

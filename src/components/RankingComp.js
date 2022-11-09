@@ -39,8 +39,9 @@ function createData(team, games, score) {
 // };
 
 export default function RankingComp(props) {
+  console.log(props.teams);
   const groups = Object.keys(props.teams);
-
+  console.log(groups);
   // if (count <= 3) setCount(count + 1);
 
   // React.useState(() => {
@@ -59,8 +60,8 @@ export default function RankingComp(props) {
   let games = [];
   let scores = [];
   for (let i = 0; i <= 3; i++) {
-    games.push(props.teams[`${groups[i]}`][0]);
-    scores.push(props.teams[`${groups[i]}`][1]);
+    games.push(props.teams[`${groups[i]}`]["games"]);
+    scores.push(props.teams[`${groups[i]}`]["score"]);
   }
 
   const rows = [
@@ -72,9 +73,14 @@ export default function RankingComp(props) {
   games = [];
   scores = [];
   return (
-    <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
+    <div className="col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center">
       <TableContainer
-        sx={{ mt: 5, borderRadius: "20px", maxWidth: 350 }}
+        sx={{
+          mt: 5,
+          borderRadius: "20px",
+          maxWidth: 350,
+          fontFamily: "SpaceMono",
+        }}
         component={Paper}
       >
         <h2 className="text-warning text-center mt-3">Group {props.name}</h2>
@@ -82,18 +88,30 @@ export default function RankingComp(props) {
           <TableHead>
             <TableRow>
               <StyledTableCell>Teams</StyledTableCell>
-              <StyledTableCell align="right">Games</StyledTableCell>
-              <StyledTableCell align="right">Scores</StyledTableCell>
+              <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                Games
+              </StyledTableCell>
+              <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                Scores
+              </StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
               <StyledTableRow key={row.team}>
-                <StyledTableCell component="th" scope="row">
+                <StyledTableCell
+                  sx={{ fontFamily: "SpaceMono" }}
+                  component="th"
+                  scope="row"
+                >
                   {row.team}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.games}</StyledTableCell>
-                <StyledTableCell align="right">{row.score}</StyledTableCell>
+                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                  {row.games}
+                </StyledTableCell>
+                <StyledTableCell sx={{ fontFamily: "SpaceMono" }} align="right">
+                  {row.score}
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

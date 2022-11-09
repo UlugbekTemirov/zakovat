@@ -1,0 +1,82 @@
+/* rgba(50, 50, 93, 0.25) */
+/* rgba(0, 0, 0, 0.3) */
+
+.developer-card {
+    box-shadow: #000000 0px 50px 100px -20px, #000000 0px 30px 60px -30px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+}
+
+.developer-image {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 700px
+}
+
+.developer-container {
+    padding: 0 150px;
+}
+
+@keyframes content {
+    100% {height: 0;}
+}
+
+.content-card {
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 0;
+    opacity: 0.8;
+    transition: all 1s;
+    animation-name: content;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+
+
+@keyframes developer {
+    0% {height: 0;}
+    100% {height: 100%;}
+}
+
+
+.developer-card:hover .content-card {
+    height: 100%;
+    animation-name: developer;
+    animation-duration: 1s;
+}
+
+.developer-card:hover .content {
+    transition: 1s;
+}
+
+.social-icons {
+    width: 50%;
+    margin: 0 auto !important;
+}
+
+
+@media (min-width: 0) and (max-width: 600) {
+
+@keyframes developer {
+    0% {height: 0;}
+    100% {height: 100%;}
+}
+
+
+.developer-card:active .content-card {
+    height: 100%;
+    animation-name: developer;
+    animation-duration: 1s;
+}
+
+.developer-card:active .content {
+    transition: 1s;
+}
+}
