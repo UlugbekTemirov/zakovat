@@ -57,6 +57,17 @@ export default function RankingComp(props) {
     } else {
       slug = a;
     }
+
+    if (slug.includes("'")) {
+      b = slug.split("'");
+      let x = "";
+      for (let i = 0; i < b.length; i++) {
+        x += b[i];
+      }
+      slug = x;
+    } else {
+      slug = slug;
+    }
     slugs.push(slug);
   }
 
