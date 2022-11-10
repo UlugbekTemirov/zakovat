@@ -11,7 +11,7 @@ const CurrentGame = () => {
         <div className="results">
           <div className="group-name text-white">O'zbekona</div>
           <span className="divider"></span>
-          <div className="group-score text-white">8</div>
+          <div className="group-score text-white">0</div>
         </div>
       </div>
       <div className="col-md-6 col-sm-12 second-team teams mt-3">
@@ -19,7 +19,7 @@ const CurrentGame = () => {
         <div className="results">
           <div className="group-name text-white">Major</div>
           <span className="divider"></span>
-          <div className="group-score text-white">5</div>
+          <div className="group-score text-white">0</div>
         </div>
       </div>
     </div>

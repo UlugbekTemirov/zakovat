@@ -21,7 +21,7 @@ const AboutZakovat = () => {
         <iframe
           width="60%"
           height="350px"
-          src="https://www.youtube.com/embed/6gMYgKhkXNE"
+          src="https://www.youtube.com/embed/6tnvvRk6TPU"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

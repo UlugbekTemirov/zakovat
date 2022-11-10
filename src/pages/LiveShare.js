@@ -15,7 +15,7 @@ const LiveShare = () => {
           allowFullScreen
         />
       </div>
-      <CurrentGame />
+      {/* <CurrentGame /> */}
     </>
   );
 };
