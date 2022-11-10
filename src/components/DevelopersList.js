@@ -63,6 +63,7 @@ const DevelopersList = (props) => {
           </div>
         </div>
         <img
+          loading="lazy"
           className="developer-image"
           alt={developer.name}
           src={developer.image}
