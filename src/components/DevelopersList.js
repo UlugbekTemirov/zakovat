@@ -15,9 +15,9 @@ const DevelopersList = (props) => {
       <div className="developer-card">
         <div className="content-card d-flex align-items-center">
           <div className="content">
-            <h3>{developer.university}</h3>
-            <h3>{developer.role}</h3>
-            <h3>{developer.description}</h3>
+            <h3 className="text-white">{developer.university}</h3>
+            <h3 className="text-white">{developer.role}</h3>
+            <h3 className="text-white">{developer.description}</h3>
             <div className="social-icons row mt-5">
               <div className="col-4 socials">
                 <a
