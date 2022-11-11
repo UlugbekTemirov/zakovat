@@ -8,7 +8,7 @@ const LiveShare = () => {
         <iframe
           width="100%"
           height="700"
-          src="https://www.youtube.com/embed/zOzxkzfgcVI "
+          src="https://www.youtube.com/embed/04rO9kKruTM"
           title="Zakovat o'yinlari"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -21,3 +21,7 @@ const LiveShare = () => {
 };
 
 export default LiveShare;
+
+{
+  /* <iframe width="560" height="315" src="https://www.youtube.com/embed/04rO9kKruTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
+}
