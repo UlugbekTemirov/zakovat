@@ -1,5 +1,6 @@
 import * as React from "react";
 import CurrentGame from "../components/CurrentGame";
+import Loader from "../components/Loader";
 import { domainName } from "../global/global";
 
 const LiveShare = () => {
