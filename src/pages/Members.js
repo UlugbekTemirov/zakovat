@@ -1,8 +1,10 @@
 import * as React from "react";
 import MembersList from "../components/MembersList";
 import { domainName } from "../global/global";
+import Loader from "../components/Loader";
 
-const Members = () => {
+const Members = (props) => {
+  const { themeMode } = props;
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const searchHandler = React.useRef();
@@ -16,8 +18,8 @@ const Members = () => {
       .then((data) => setData(data));
   }, []);
 
-  if (data.length == 0)
-    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
+  if (data.length == 0) return <Loader themeMode={themeMode} />;
+  // return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
 
   return (
     <ul className="members-list p-0">

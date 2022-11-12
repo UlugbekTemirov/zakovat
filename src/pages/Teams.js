@@ -3,8 +3,10 @@ import * as React from "react";
 import TeamsList from "../components/TeamsList";
 import BasicModal from "../components/BasicModal";
 import { domainName } from "../global/global";
+import Loader from "../components/Loader";
 
-const Teams = () => {
+const Teams = (props) => {
+  const { themeMode } = props;
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
@@ -24,8 +26,7 @@ const Teams = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  if (data.length == 0)
-    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
+  if (data.length == 0) return <Loader themeMode={themeMode} />;
 
   return (
     <>

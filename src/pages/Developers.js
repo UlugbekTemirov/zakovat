@@ -1,8 +1,10 @@
 import * as React from "react";
 import DevelopersList from "../components/DevelopersList";
 import { domainName } from "../global/global";
+import Loader from "../components/Loader";
 
-const Developers = () => {
+const Developers = (props) => {
+  const { themeMode } = props;
   const [developers, setDevelopers] = React.useState([]);
 
   React.useEffect(() => {
@@ -11,8 +13,7 @@ const Developers = () => {
       .then((data) => setDevelopers(data));
   }, []);
 
-  if (developers.length == 0)
-    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
+  if (developers.length == 0) return <Loader themeMode={themeMode} />;
 
   return (
     <div className="row">

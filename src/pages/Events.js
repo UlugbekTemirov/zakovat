@@ -3,9 +3,11 @@ import RankingComp from "../components/RankingComp";
 import UpcomingGame from "../components/UpcomingGame";
 
 import { domainName } from "../global/global";
+import Loader from "../components/Loader";
 
 const Events = (props) => {
   const [groups, setGroups] = React.useState([]);
+  const { themeMode } = props;
 
   React.useEffect(() => {
     fetch(`${domainName}/api/v1/groups/`)
@@ -13,8 +15,7 @@ const Events = (props) => {
       .then((data) => setGroups(data));
   }, []);
 
-  if (groups.length == 0)
-    return <h1 className="text-center mt-5">Yuklanyapti...</h1>;
+  if (groups.length == 0) return <Loader themeMode={themeMode} />;
 
   return (
     <>
