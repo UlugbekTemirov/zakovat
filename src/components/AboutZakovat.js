@@ -12,8 +12,8 @@ const AboutZakovat = () => {
             <br className="d-lg-none" /> 2-mavsum
           </h1>
           <p className="text-center mt-lg-5">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard
+            Toshkent shahridagi Ajou universiteti Zakovat klubi Zakovat ligasi
+            2-mavsum o'yinlarini ochiq deb e'lon qiladi!
           </p>
         </div>
       </div>
