@@ -11,7 +11,6 @@ const CurrentGame = (props) => {
     fetch(`${domainName}/api/v1/current-game/`)
       .then((promise) => promise.json())
       .then((data) => {
-        console.log(data);
         setData(data);
       });
   };
@@ -20,7 +19,7 @@ const CurrentGame = (props) => {
     fetchData();
   }, []);
 
-  // setTimeout(fetchData, 10000);
+  data.team1 !== "" && setTimeout(fetchData, 10000);
 
   if (data.team1 == "")
     return (
