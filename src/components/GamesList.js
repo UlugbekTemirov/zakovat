@@ -23,8 +23,6 @@ export default function GamesList() {
           O'yinlar tarixi topilmadi
         </h1>
       );
-    }
+    } else return <GameResults myType={"events"} targetData={data} />;
   }
-
-  return <GameResults myType={"events"} targetData={data} />;
 }

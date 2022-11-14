@@ -6,7 +6,7 @@ import { CardActionArea } from "@mui/material";
 
 const GameResultsList = (props) => {
   const { gameResults: results, myType } = props;
-
+  console.log(results);
   return (
     <div className="col-lg-6">
       {myType == "events" &&
@@ -67,7 +67,6 @@ const GameResultsList = (props) => {
       {myType != "events" && (
         <Card
           sx={{
-            // minWidth: 345,
             p: 0,
             mt: 2,
             boxShadow: "#000 0px 7px 29px 0px;",

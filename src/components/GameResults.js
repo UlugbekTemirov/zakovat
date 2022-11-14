@@ -1,6 +1,7 @@
 import * as React from "react";
 import GameResultsList from "./GameResultsList";
 import { domainName } from "../global/global";
+import Loader from "./Loader";
 
 const GameResults = (props) => {
   const { myType, targetData } = props;
@@ -12,9 +13,7 @@ const GameResults = (props) => {
       .then((data) => setData(data));
   }, []);
 
-  if (data.length == 0) return;
-
-  console.log(targetData);
+  if (data.length == 0) return <Loader />;
 
   if (targetData.length !== 0) {
     if (targetData.results.length == 0)
@@ -23,12 +22,6 @@ const GameResults = (props) => {
           O'yinlar Topilmadi
         </h3>
       );
-
-    return (
-      <h3 className="text-white text-opacity-75 text-center mt-5">
-        O'yinlar Topilmadi
-      </h3>
-    );
   }
 
   return (
