@@ -20,7 +20,7 @@ const CurrentGame = (props) => {
     fetchData();
   }, []);
 
-  setTimeout(fetchData, 10000);
+  // setTimeout(fetchData, 10000);
 
   if (data.team1 == "")
     return (
